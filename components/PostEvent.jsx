@@ -357,7 +357,7 @@ const PostEvent = (props) => {
             >
               {EventRegistrationLink === null ? null : (
                 <Text className="text-center  font-semibold text-base" code>
-                  Hover to preview QR Code
+                  Hover/Click to preview QR Code
                 </Text>
               )}
             </Popover>
