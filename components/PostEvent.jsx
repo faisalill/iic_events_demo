@@ -34,12 +34,15 @@ import {
 } from "firebase/storage";
 import {doc, setDoc, getFirestore} from 'firebase/firestore'
 import {uuidv4} from '@firebase/util'
+import {getAuth}from 'firebase/auth'
+import {useAuthState} from 'react-firebase-hooks/auth'
 import { app } from "../config/firebase.config";
 
 
 const storage = getStorage(app);
 const db = getFirestore(app);
 const docRef = doc(db, "events", uuidv4());
+const auth = getAuth(app);
 
 const schema = Yup.object().shape({
   EventName: Yup.string().required("Required"),
@@ -56,6 +59,7 @@ const schema = Yup.object().shape({
 });
 
 const PostEvent = (props) => {
+ const [user] = useAuthState(auth);
   const [messageApi, contextHolder] = message.useMessage()
 
   const [Percent, setPercent] = useState(0);
@@ -126,6 +130,8 @@ const PostEvent = (props) => {
     }
   }
 
+
+
   var EventDetails = {};
   const [EventRegistrationLink, setEventRegistrationLink] = useState(null);
   const [EventDate, setEventDate] = useState(null);
@@ -138,6 +144,9 @@ const PostEvent = (props) => {
   return (
     <>
     {contextHolder}
+      <div 
+      className={user? "block" : "hidden"}
+      >
       <Button
         onClick={(e) => {
           setDisablePostModal(true);
@@ -364,6 +373,7 @@ const PostEvent = (props) => {
           </div>
         </Modal>
       </Button>
+      </div>
     </>
   );
 };
