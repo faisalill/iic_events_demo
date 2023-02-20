@@ -110,6 +110,7 @@ const PostEvent = (props) => {
               EventTime: EventTime,
               UploadImage: url,
               imageId: UploadImage.uid + UploadImage.lastModified,
+              postingEmail: user.email,
             };
             setDoc(docRef, EventDetails).then(()=>{
             messageApi.destroy("uploading")

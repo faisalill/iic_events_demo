@@ -561,7 +561,7 @@ export const  ClubInfo = [
     },
     {
       "warning": "for testing purposes only",
-      "ClubEmailID": "sdfj", 
+      "ClubEmailID": ".", 
       "ClubInstaID": ".",
       "ClubLeaderName": ".",
       "ClubLeaderNumber": 33,
@@ -569,7 +569,7 @@ export const  ClubInfo = [
       "ClubLeaderEmailId": "ucantseemej@gmail.com",
       "SecondLeaderName": "...",
       "SecondLeaderNumber": 334,
-      "SecondLeaderEmail": ".",
+      "SecondLeaderEmail": "mohammed.ee21@bmsce.ac.in",
       "ClubType": "."
     },
 ]

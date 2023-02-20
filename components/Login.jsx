@@ -72,7 +72,8 @@ const Login = (props) => {
                   <Button key="submit" disabled={DisableLogin}
                   onClick={()=>{
                     signInWithGoogle().then((res)=>{
-                    for(const clubs of ClubInfo){
+                    if(res){
+                      for(const clubs of ClubInfo){
                         if(clubs.ClubEmailID == res.user.email || clubs.ClubLeaderEmailId == res.user.email || clubs.SecondLeaderEmail == res.user.email){
                           setModalOpen(false);
                           messageApi.success('Logged In Successfully');
@@ -86,6 +87,7 @@ const Login = (props) => {
                         signOut();
                         return;
                       }
+                    }
                     }
                     })
                   }}

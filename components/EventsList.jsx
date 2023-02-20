@@ -25,11 +25,18 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { app } from "../config/firebase.config";
 import dayjs from "dayjs";
 import Loading from "./Loading";
+import { getAuth } from "firebase/auth";
+import {useAuthState} from 'react-firebase-hooks/auth'
+
 
 var itemData = [];
 const storage = getStorage(app);
 const db = getFirestore(app);
+const auth = getAuth(app);
+
+
 const EventsList = () => {
+  const [user] = useAuthState(auth);
   const [messageApi, contextHolder] = message.useMessage()
   const [EventList, setEventList] = useState([]);
   const collectionRef = collection(db, "events");
@@ -145,6 +152,7 @@ const EventsList = () => {
                             <div key="Delete">
                               <Button
                                 type="link"
+                                disabled={user && user.email === item.postingEmail ? false : true }
                                 onClick={() => {
                                   messageApi.loading({
                                     content: "Deleting",
