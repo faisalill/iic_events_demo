@@ -572,5 +572,10 @@ export const  ClubInfo = [
       "SecondLeaderEmail": "mohammed.ee21@bmsce.ac.in",
       "ClubType": "."
     },
+    {
+      "ClubLeaderEmailId": "team.alumni@bmsce.ac.in",
+      "SecondLeaderEmail": "mohammed.ee21@bmsce.ac.in",
+
+    },
 ]
 
