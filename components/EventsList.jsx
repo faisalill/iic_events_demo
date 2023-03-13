@@ -191,25 +191,25 @@ const EventsList = () => {
                             <Text className="text-xl  text-center  font-bold">
                               {item.EventName}
                             </Text>
-                            <Text className=" text-left  ">
+                            <Text className=" text-left mb-1 mt-1  ">
                               {/* {item.EventDescription} */}
                               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas expedita minima itaque voluptatum similique accusantium dolorem? Expedita facilis maiores odio adipisci, dicta iste consectetur libero. Aspernatur fuga dignissimos nemo totam aliquam nam laboriosam quas repudiandae labore culpa itaque natus necessitatibus non ut pariatur iure aperiam distinctio, obcaecati doloribus, esse voluptatum.
                             </Text>
-                            <Text className="font-bold">Venue: {item.EventVenue}</Text>
-                            <Text>Date: {item.EventDate}</Text>
+                            <Text className="font-bold">Venue: <span className="font-normal">{item.EventVenue}</span> </Text>
+                            <Text className="font-bold">Date: <span className="font-normal">{item.EventDate}</span></Text>
                             <Text
                               copyable={{
                                 text: item.Contact1,
                               }}
                             >
-                              Contact 1: {item.Contact1}
+                              <span className="font-bold">Contact 1:</span> {item.Contact1}
                             </Text>
                             <Text
                               copyable={{
                                 text: item.Contact2,
                               }}
                             >
-                              Contact 2: {item.Contact2}
+                              <span className="font-bold">Contact 2:</span>  {item.Contact2}
                             </Text>
                             {/* <Text 
                        copyable={{
