@@ -188,10 +188,14 @@ const EventsList = () => {
                           ]}
                         >
                           <div className="flex flex-col">
-                            <Text className="text-xl  font-bold">
+                            <Text className="text-xl  text-center  font-bold">
                               {item.EventName}
                             </Text>
-                            <Text className="">Venue: {item.EventVenue}</Text>
+                            <Text className=" text-left  ">
+                              {/* {item.EventDescription} */}
+                              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas expedita minima itaque voluptatum similique accusantium dolorem? Expedita facilis maiores odio adipisci, dicta iste consectetur libero. Aspernatur fuga dignissimos nemo totam aliquam nam laboriosam quas repudiandae labore culpa itaque natus necessitatibus non ut pariatur iure aperiam distinctio, obcaecati doloribus, esse voluptatum.
+                            </Text>
+                            <Text className="font-bold">Venue: {item.EventVenue}</Text>
                             <Text>Date: {item.EventDate}</Text>
                             <Text
                               copyable={{

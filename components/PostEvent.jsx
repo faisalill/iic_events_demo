@@ -24,7 +24,7 @@ import dayjs from "dayjs";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { BsCalendar4Event, BsLink45Deg, BsTelephonePlus } from "react-icons/bs";
-import { MdOutlinePlace } from "react-icons/md";
+import { MdOutlineDescription, MdOutlinePlace } from "react-icons/md";
 import { itemDataContext } from "@/pages";
 import {
   getStorage,
@@ -46,6 +46,7 @@ const auth = getAuth(app);
 
 const schema = Yup.object().shape({
   EventName: Yup.string().required("Required"),
+  EventDescription: Yup.string().required("Required"),
   EventVenue: Yup.string().required("Required"),
   Contact1: Yup.number()
     .min(1000000000, "Number is not 10 characters")
@@ -70,6 +71,7 @@ const PostEvent = (props) => {
   const formik = useFormik({
     initialValues: {
       EventName: "",
+      EventDescription: "",
       EventVenue: "",
       Contact1: "",
       Contact2: "",
@@ -224,6 +226,28 @@ const PostEvent = (props) => {
             {formik.errors.EventName ? (
               <Tag color="error" className="w-fit ml-2">
                 {formik.errors.EventName}
+              </Tag>
+            ) : null}
+            <Text className="text-center mt-4 m-1  font-semibold text-base">
+              Event Description
+            </Text>
+            <Input
+              autoComplete="off"
+              value={formik.values.EventDescription}
+              name="EventDescription"
+              prefix={<MdOutlineDescription className="mr-2" />}
+              onChange={
+                //     (e) => {
+                //     setEventName(e.target.value);
+                //   }
+                formik.handleChange
+              }
+              className="m-2"
+              placeholder="Enter Event Description..."
+            />
+            {formik.errors.EventDescription ? (
+              <Tag color="error" className="w-fit ml-2">
+                {formik.errors.EventDescription}
               </Tag>
             ) : null}
             <Text className="text-center mt-4  font-semibold">Poster</Text>
