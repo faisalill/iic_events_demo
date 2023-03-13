@@ -59,6 +59,8 @@ const schema = Yup.object().shape({
     .required("Required"),
 });
 
+const {TextArea } = Input;
+
 const PostEvent = (props) => {
  const [user] = useAuthState(auth);
   const [messageApi, contextHolder] = message.useMessage()
@@ -231,7 +233,7 @@ const PostEvent = (props) => {
             <Text className="text-center mt-4 m-1  font-semibold text-base">
               Event Description
             </Text>
-            <Input
+            <TextArea
               autoComplete="off"
               value={formik.values.EventDescription}
               name="EventDescription"
