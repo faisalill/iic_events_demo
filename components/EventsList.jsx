@@ -192,8 +192,7 @@ const EventsList = () => {
                               {item.EventName}
                             </Text>
                             <Text className=" text-left mb-1 mt-1  ">
-                              {/* {item.EventDescription} */}
-                              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas expedita minima itaque voluptatum similique accusantium dolorem? Expedita facilis maiores odio adipisci, dicta iste consectetur libero. Aspernatur fuga dignissimos nemo totam aliquam nam laboriosam quas repudiandae labore culpa itaque natus necessitatibus non ut pariatur iure aperiam distinctio, obcaecati doloribus, esse voluptatum.
+                              {item.EventDescription}
                             </Text>
                             <Text className="font-bold">Venue: <span className="font-normal">{item.EventVenue}</span> </Text>
                             <Text className="font-bold">Date: <span className="font-normal">{item.EventDate}</span></Text>
