@@ -192,7 +192,7 @@ const EventsList = () => {
                               {item.EventName}
                             </Text>
                             <Text className=" text-left mb-1 mt-1  ">
-                              {item.EventDescription}
+                            {item.EventDescription && item.EventDescription.split('\n').map((line, i) => <div key={i}>{line}<br /></div>)}
                             </Text>
                             <Text className="font-bold">Venue: <span className="font-normal">{item.EventVenue}</span> </Text>
                             <Text className="font-bold">Date: <span className="font-normal">{item.EventDate}</span></Text>
