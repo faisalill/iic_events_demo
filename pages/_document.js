@@ -7,6 +7,7 @@ class MyDocument extends Document {
         <Head>
           <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" href="/icon.png"></link>
+          {/* change the theme colour of the topbar  */}
           <meta name="theme-color" content="#000d19" />
         </Head>
         <body>
